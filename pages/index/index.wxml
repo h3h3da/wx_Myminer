@@ -1,0 +1,112 @@
+<!--index.wxml-->
+
+  <view class='amountBg'>
+    <view class='img'>
+      <open-data type="userAvatarUrl"></open-data>
+    </view>
+    <view class='account'>
+      <view class='nick-name'>
+        <open-data type="userNickName" lang="zh_CN"></open-data>
+      </view>
+      <view class='address'>
+        <open-data type="userCountry" lang="zh_CN"></open-data>·
+        <open-data type="userProvince" lang="zh_CN"></open-data>·
+        <open-data type="userCity" lang="zh_CN"></open-data>
+      </view>
+    </view>
+  </view>
+
+  <view class="itemView">
+    <input class="input" value="{{inputValue}}" placeholder="请输入CFX钱包地址" bindinput="userAddressInput" bindconfirm="userAddressSearch"/>
+    <!--<input class="input" type="text" placeholder="请输入" placeholder-style="color:#000;"></input>-->
+  </view>
+  
+  <view class="view_tupian_wenzi" bindtap="bindViewTap">
+    <image class="image_1" src="../../assets/images/index/wallet.png" />
+    <!-- 包裹两行文字 -->
+    <view class="view_wenzi2">
+      <text class="text_small">钱包地址：{{account}}</text>
+      <text class="text_small">收益：{{balance}} CFX</text>
+      <text class="text_small">未确认收益：{{unconfirmed_balance}} CFX</text>
+      <text class="text_small">预计日收益：CFX {{approximated_earnings.coins}} ≈ ¥ {{approximated_earnings.yuan}}</text>
+    </view>
+  </view>
+  <view class="view_tupian_wenzi" bindtap="bindViewTap">
+    <image class="image_1" src="../../assets/images/index/hashrate.png" />
+    <!-- 包裹两行文字 -->
+    <view class="view_wenzi2">
+      <text class="text_small">当前算力：{{hashrate}} Mh/s</text>
+      <text class="text_small">6H算力：{{hashrate6}} Mh/s</text>
+      <text class="text_small">24H算力：{{hashrate24}} Mh/s</text>
+      <text wx:if="{{price.status}}" class="text_small">CFX价格：¥ {{price.data.price_cny}}</text>
+      <text wx:else class="text_small">CFX价格：请求错误</text>
+      
+    </view>
+  </view>
+  <view class="view_tupian_wenzi" bindtap="bindViewTap">
+    <image class="image_1" src="../../assets/images/index/workers.png" />
+    <!-- 包裹两行文字 -->
+    <view class="view_wenzi2">
+      <text class="text_small">矿工信息</text>
+      <text class="online">在线：{{workersOnline}}</text>
+      <text class="offline">离线：{{workersOffline}}</text>
+      <text class="text_small">有效份额：{{rating}}</text>
+    </view>
+  </view>
+  <!--
+  <view class="userinfo">
+    <block wx:if="{{canIUseOpenData}}" calss="userinfo-opendata">
+      <view class="userinfo-avatar" bindtap="bindViewTap">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <open-data type="userNickName"></open-data>
+    </block>
+    
+    <block wx:elif="{{!hasUserInfo}}">
+      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
+      <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+      <view wx:else> 请使用1.4.4及以上版本基础库 </view>
+    </block>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+
+  <view class='line'></view>
+  <view wx:if="{{general_info.status}}" class="general-info"  bindtap="bindViewTap">
+    <text class="user-motto">钱包地址：{{general_info.data.account}}</text>
+    <text class="user-motto">收益：{{general_info.data.balance}}</text>
+    <text class="user-motto">未确认收益：{{general_info.data.unconfirmed_balance}}</text>
+    <text class="user-motto">预计日收益：CFX {{approximated_earnings.coins}} ≈ ¥ {{approximated_earnings.yuan}}</text>
+    <text class="user-motto">当前算力：{{general_info.data.hashrate}} Mh/s</text>
+    <text class="user-motto">24H算力：{{hashrate24}} Mh/s</text>
+    <text wx:if="{{price.status}}" class="user-motto">CFX价格：{{price.data.price_cny}}</text>
+    <text wx:else class="user-motto">CFX价格：请求错误</text>
+    <text class="user-motto">矿工：</text>
+    <block wx:for="{{workers}}">
+      <view class='workers'>
+        <text wx:if="{{item.hashrate}}" class="worker"><text class="online">{{item.id}}: {{item.rating}}</text></text>
+        <text wx:else class="worker"><text class="offline">{{item.id}}: {{item.rating}}</text></text>
+      </view>
+    </block>
+  </view>
+  <view wx:else  bindtap="bindViewTap">
+    <text class="user-motto">钱包地址：{{general_info.data.account}}</text>
+    <text class="user-motto">收益：{{general_info.data.balance}}</text>
+    <text class="user-motto">未确认收益：{{general_info.data.unconfirmed_balance}}</text>
+    <text class="user-motto">预计日收益：CFX {{approximated_earnings.coins}} ≈ ¥ {{approximated_earnings.yuan}}</text>
+    <text class="user-motto">哈希率：{{general_info.data.hashrate}}</text>
+    <text wx:if="{{price.status}}" class="user-motto">CFX价格：{{price.data.price_cny}}</text>
+    <text wx:else class="user-motto">CFX价格：请求错误</text>
+    <text class="user-motto">矿工：</text>
+    <block wx:for="{{workers}}">
+      <view class='workers'>
+        <text wx:if="{{item.hashrate}}" class="worker"><text class="online">{{item.id}}: {{item.rating}}</text></text>
+        <text wx:else class="worker"><text class="offline">{{item.id}}: {{item.rating}}</text></text>
+      </view>
+    </block>
+  </view>
+
+-->
+

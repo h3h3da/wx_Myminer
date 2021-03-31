@@ -1,0 +1,172 @@
+/* pages/payments/payments.wxss */
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #aaa;
+}
+
+.userinfo-avatar {
+  overflow: hidden;
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.td {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.line{
+  width: 100%;
+  margin-top: 20rpx;
+  border-top:1px #989898 solid;
+  }
+
+  .success {
+    font-size: 30rpx;
+    word-break: break-all;
+    color: #20b420;
+    margin-top: 10rpx
+  }
+  
+  .fail {
+    font-size: 30rpx;
+    word-break: break-all;
+    color: #f00a30;
+    margin-top: 10rpx
+  }
+
+.general-info {
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-start;
+  word-break:break-all; 
+  flex-direction: column;
+}
+
+.weather {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.city,.condition,.temp {
+  width:100%;
+  margin-top: 200px;
+}
+
+.flex-wrp{
+  margin-top: 60rpx;
+  display:flex;
+}
+.flex-item{
+  width: 200rpx;
+  height: 300rpx;
+  font-size: 26rpx;
+}
+.flex-item-V{
+  margin: 0 auto;
+  width: 300rpx;
+  height: 200rpx;
+}
+
+.demo-text-1{
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background-color: #1AAD19;
+  color: #FFFFFF;
+  font-size: 36rpx;
+}
+.demo-text-1:before{
+  content: 'A';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.demo-text-2{
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background-color: #2782D7;
+  color: #FFFFFF;
+  font-size: 36rpx;
+}
+.demo-text-2:before{
+  content: 'B';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.demo-text-3{
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background-color: #F1F1F1;
+  color: #353535;
+  font-size: 36rpx;
+}
+.demo-text-3:before{
+  content: 'C';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.view_tupian_wenzi {
+  height: 260rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  
+  /* 圆角 */
+  border-radius: 20rpx;
+
+  /* 边 */
+  border: 3rpx solid #E0E3DA;
+  box-shadow:5rpx 5rpx 5rpx 5rpx #E0E3DA;
+
+  background-color: #ffffff;
+  margin: 30rpx;
+
+  /* padding使得文字和图片不至于贴着边框 */
+  padding: 30rpx;
+
+}
+
+/* 图片 */
+
+.image_1 {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+/* 包裹两行文字 */
+
+.view_wenzi2 {
+  width: 100%;
+  margin-left: 25rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 小字 */
+
+.text_small {
+  font-size: 30rpx;
+  word-break: break-all;
+  color: #7a7878;
+  margin-top: 10rpx
+}
+
+.center {
+  display:flex; 
+  justify-content:center;
+}

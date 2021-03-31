@@ -1,0 +1,42 @@
+<!--pages/payments/payments.wxml-->
+<wxs module="m1">
+ 
+    //时间戳转换
+    function timestampToTime (timestamp) {
+    console.log(timestamp)
+    var date = getDate(timestamp * 1000);//时间戳为10位需*1000
+    var Y = date.getFullYear() + '-';
+    var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+    var D = date.getDate() + ' ';
+    var h = date.getHours() + ':';
+    var m = date.getMinutes() + ':';
+    var s = date.getSeconds();
+    return Y + M + D + h + m + s;
+  }
+  module.exports.timestampToTime=timestampToTime
+
+</wxs>
+
+<!-- <view class="center"><text>共{{total}}笔支付记录</text></view> -->
+<view wx:if="{{total < 100}}" class="center"><image src='../../assets/images/setting/nail.png' style="width:22px;height:21px;"></image><text>共{{total}}笔支付记录</text></view>
+<view wx:else class="center"><image src='../../assets/images/setting/nail.png' style="width:22px;height:21px;"></image><text>共{{total - total + 100 + '+'}}笔支付记录</text></view>
+<block wx:for="{{payments}}">
+
+  <!-- 包裹图片+两行文字 id="{{index}}"是给按下了那个item记录-->
+
+  <view class="view_tupian_wenzi" bindtap="bindViewTap">
+    <image wx:if="{{item.confirmed}}" class="image_1" src="../../assets/images/payments/success.png" />
+    <image wx:else class="image_1" src="../../assets/images/payments/fail.png" />
+    <!-- 包裹两行文字 -->
+    <view class="view_wenzi2">
+      <text class="text_small">支付数量：{{item.amount}}</text>
+      <text class="text_small">支付时间：{{m1.timestampToTime(item.date)}}</text>
+      <text wx:if="{{item.confirmed}}" class="text_small">支付状态：<text class="success">成功</text></text>
+      <text wx:else class="text_small">支付状态：<text class="fail">失败</text></text>
+      <text class="text_small">交易哈希：{{item.txHash}}</text>
+    </view>
+  </view>
+<!--<view class='line'></view>-->
+</block>
+
+

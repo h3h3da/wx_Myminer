@@ -1,0 +1,46 @@
+<!--pages/transaction/transaction.wxml-->
+<wxs module="m1">
+ //时间戳转换
+ function timestampToTime (timestamp) {
+  // console.log(timestamp)
+  var date = getDate(timestamp * 1000);//时间戳为10位需*1000
+  var Y = date.getFullYear() + '-';
+  var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+  var D = date.getDate() + ' ';
+  var h = date.getHours() + ':';
+  var m = date.getMinutes() + ':';
+  var s = date.getSeconds();
+  return Y + M + D + h + m + s;
+}
+// function addresschange (address) {
+//   return address.toLowerCase().substr(0,4) + res["data"]["address"].toLowerCase().substr(-42,);
+// }
+module.exports = {
+  timestampToTime: timestampToTime
+}
+
+</wxs>
+
+<view wx:if="{{total < 100}}" class="center"><image src='../../assets/images/setting/nail.png' style="width:22px;height:21px;"></image><text>共{{total}}笔交易记录</text></view>
+<view wx:else class="center"><image src='../../assets/images/setting/nail.png' style="width:22px;height:21px;"></image><text>共{{total - total + 100 + '+'}}笔交易记录</text></view>
+<block wx:for="{{transactions}}">
+  <!-- 包裹图片+两行文字 id="{{index}}"是给按下了那个item记录-->
+  <view class="view_tupian_wenzi" bindtap="bindViewTap">
+    <image class="image_1" src="../../assets/images/transaction/transaction.png" />
+    <!-- 包裹两行文字 -->
+    <view class="view_wenzi2">
+      <text class="text_small">交易 {{item.number}}</text>
+      <text class="text_small">交易哈希：{{item.blockHash}}</text>
+      <text class="text_small">发送方：{{item.from}}</text>
+      <text class="text_small">接收方：{{item.to}}</text>
+      <text class="text_small">交易额：{{item.value}} CFX</text>
+      <text class="text_small">燃气费：{{item.gasFee}} drip</text>
+      <text class="text_small">燃气价格：{{item.gasPrice}} drip</text>
+      <text class="text_small">执行纪元：{{item.epochNumber}}</text>
+      <text class="text_small">目标纪元：{{item.epochHeight}}</text>
+      <text class="text_small">交易时间：{{m1.timestampToTime(item.timestamp)}}</text>
+      <text wx:if="{{!item.status}}" class="text_small">交易状态：<text class="success">成功</text></text>
+      <text wx:else class="text_small">交易状态：<text class="success">失败</text></text>
+    </view>
+  </view>
+</block>

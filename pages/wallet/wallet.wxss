@@ -1,0 +1,46 @@
+/* pages/wallet/wallet.wxss */
+.view_tupian_wenzi {
+  height: 400rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  
+  /* 圆角 */
+  border-radius: 20rpx;
+
+  /* 边 */
+  border: 3rpx solid #E0E3DA;
+  box-shadow:5rpx 5rpx 5rpx 5rpx #E0E3DA;
+
+  background-color: #ffffff;
+  margin: 30rpx;
+
+  /* padding使得文字和图片不至于贴着边框 */
+  padding: 30rpx;
+
+}
+
+/* 图片 */
+
+.image_1 {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+/* 包裹两行文字 */
+
+.view_wenzi2 {
+  width: 100%;
+  margin-left: 25rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 小字 */
+
+.text_small {
+  font-size: 30rpx;
+  word-break: break-all;
+  color: #7a7878;
+  margin-top: 10rpx
+}

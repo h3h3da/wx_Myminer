@@ -1,0 +1,26 @@
+<!--pages/about/about.wxml-->
+
+<!-- <view class="center"><text>共{{total}}名矿工</text></view> -->
+<block>
+  <!-- 包裹图片+两行文字 id="{{index}}"是给按下了那个item记录-->
+  <view class="view_tupian_wenzi1">
+    <image class="image_1" src="../../assets/images/about/us.png" />
+    <!-- 包裹两行文字 -->
+    <view class="view_wenzi2">
+      <text class="text_small">我（们）是一群热爱技术热爱挖矿的在校大学生（小韭菜）。做这个小程序，本来只是为了我在使用Nanopool矿池挖CFX币的时候，对自己的矿机状态、CFX价格、Conflux账户信息以及Nanopool矿池信息等数据进行实时地监控，并且只做了一个定时推送的小工具。后来感觉不够灵活，并且可能有很多有同样需求的小伙伴。所以就决定开发了这个小程序，方便大家一起使用。目前这个小程序功能还有些简陋，如果有小伙伴同样感兴趣，十分欢迎您的加入，与我一起把小程序的功能继续完善！等你呦~</text>
+    </view>
+  </view>
+</block>
+
+<block>
+  <!-- 包裹图片+两行文字 id="{{index}}"是给按下了那个item记录-->
+  <view class="view_tupian_wenzi2">
+    <image class="image_1" src="../../assets/images/about/call.png" />
+    <!-- 包裹两行文字 -->
+    <view class="view_wenzi3">
+      <text class="text_small"> 微信： lczh3h3da</text>
+      <image class="image_2" src="../../assets/images/about/wechat.jpg" />
+    </view>
+  </view>
+</block>
+

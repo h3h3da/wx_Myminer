@@ -1,0 +1,35 @@
+<!--pages/workers/workers.wxml-->
+<wxs module="m1">
+ //时间戳转换
+ function timestampToTime (timestamp) {
+  console.log(timestamp)
+  var date = getDate(timestamp * 1000);//时间戳为10位需*1000
+  var Y = date.getFullYear() + '-';
+  var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+  var D = date.getDate() + ' ';
+  var h = date.getHours() + ':';
+  var m = date.getMinutes() + ':';
+  var s = date.getSeconds();
+  return Y + M + D + h + m + s;
+}
+module.exports.timestampToTime=timestampToTime
+</wxs>
+
+<!-- <view class="center"><text>共{{total}}名矿工</text></view> -->
+<view wx:if="{{total < 100}}" class="center"><image src='../../assets/images/setting/nail.png' style="width:22px;height:21px;"></image><text>共{{total}}名矿工</text></view>
+<view wx:else class="center"><image src='../../assets/images/setting/nail.png' style="width:22px;height:21px;"></image><text>共{{total - total + 100 + '+'}}名矿工</text></view>
+<block wx:for="{{workers}}">
+  <!-- 包裹图片+两行文字 id="{{index}}"是给按下了那个item记录-->
+  <view class="view_tupian_wenzi" bindtap="bindViewTap">
+    <image class="image_1" src="../../assets/images/worker/worker.png" />
+    <!-- 包裹两行文字 -->
+    <view class="view_wenzi2">
+      <text class="text_small">矿工ID：{{item.id}}</text>
+      <text wx:if="{{item.hashrate}}" class="text_small">矿工状态：<text class="online">在线</text></text>
+      <text wx:else class="text_small">矿工状态：<text class="offline">离线</text></text>
+      <text class="text_small">当前算力：{{item.hashrate}} Mh/s</text>
+      <text class="text_small">有效份额：{{item.rating}}</text>
+    </view>
+  </view>
+</block>
+

@@ -1,0 +1,14 @@
+<!--pages/wallet/wallet.wxml-->
+<view class="view_tupian_wenzi" bindtap="bindViewTap">
+    <image class="image_1" src="../../assets/images/wallet/wallet1.png" />
+    <!-- 包裹两行文字 -->
+    <view class="view_wenzi2">
+      <text class="text_small">钱包地址：{{account}}</text>
+      <text class="text_small">新地址：{{accountNew}}</text>
+      <text class="text_small">余额：{{balance}} CFX</text>
+      <text class="text_small">市值：¥ {{approximatedValue}}</text>
+      <text class="text_small">随机数：{{nonce}}</text>
+      <text class="text_small">抵押存储： {{collateralForStorage}} CFX</text>
+      <text class="text_small">质押 CFX：{{stakingBalance}} CFX</text>
+    </view>
+  </view>

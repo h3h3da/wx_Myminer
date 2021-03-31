@@ -1,0 +1,12 @@
+<!--pages/mypool/mypool.wxml-->
+<view class="view_tupian_wenzi" bindtap="bindViewTap">
+    <image class="image_1" src="../../assets/images/pool/nano.png" />
+    <!-- 包裹两行文字 -->
+    <view class="view_wenzi2">
+      <text class="text_small">矿主数量：{{activeminers}}</text>
+      <text class="text_small">矿工数量：{{activeworkers}}</text>
+      <text class="text_small">矿池算力：{{hashrate}} Gh/s</text>
+      <text class="text_small">起付额度：{{payout}}</text>
+      <text class="text_small">当前价格：¥ {{prices.price_cny}}</text>
+    </view>
+  </view>

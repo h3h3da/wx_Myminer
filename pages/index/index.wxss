@@ -1,0 +1,148 @@
+/**index.wxss**/
+.amountBg {
+  display: flex;
+  flex-direction: row;
+  height: 100px;
+  background-color: #5cc97f;
+  align-items: center;
+}
+
+.itemView{
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 50px;
+ 
+  justify-content: flex-start;
+  display: flex;
+  align-items: center;
+}
+
+.input{
+  width: 100%;
+  height: 35px; 
+  border: 1px solid lightgray;
+  border-radius: 15rpx;
+}
+
+.line{
+  width: 100%;
+  margin-top: 20rpx;
+  border-top:1px #989898 solid;
+  }
+
+.img {
+  overflow: hidden;
+  display: block;
+  margin-left: 20px;
+  width: 49px;
+  height: 49px;
+  border-radius: 50%;
+}
+
+.account {
+  width: 70%;
+  color: #fff;
+  margin-left: 10px;
+  align-items: center;
+}
+
+.nick-name{
+  font-family: 'Mcrosoft Yahei';
+  font-size: 16px;
+}
+
+.address{
+  font-size: 13px;
+}
+
+
+.nav {
+  width: 15px;
+  color: #fff;
+}
+
+.content {
+  background-color: #f4f4f4;
+  height: 620px;
+}
+
+.general-info {
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-start;
+  word-break:break-all; 
+  flex-direction: column;
+}
+
+.weather {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.city,.condition,.temp {
+  width:100%;
+  margin-top: 200px;
+}
+
+.view_tupian_wenzi {
+  height: 240rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  
+  /* 圆角 */
+  border-radius: 20rpx;
+
+  /* 边 */
+  border: 3rpx solid #E0E3DA;
+  box-shadow:5rpx 5rpx 5rpx 5rpx #E0E3DA;
+
+  background-color: #ffffff;
+  margin: 30rpx;
+
+  /* padding使得文字和图片不至于贴着边框 */
+  padding: 30rpx;
+
+}
+
+/* 图片 */
+
+.image_1 {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+/* 包裹两行文字 */
+
+.view_wenzi2 {
+  width: 100%;
+  margin-left: 25rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 小字 */
+
+.text_small {
+  font-size: 30rpx;
+  word-break: break-all;
+  color: #7a7878;
+  margin-top: 10rpx
+}
+
+
+.online {
+  font-size: 30rpx;
+  word-break: break-all;
+  color: #20b420;
+  margin-top: 10rpx
+}
+
+.offline {
+  font-size: 30rpx;
+  word-break: break-all;
+  color: #f00a30;
+  margin-top: 10rpx
+}

@@ -1,0 +1,42 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/setting/setting",
+    "pages/payments/payments",
+    "pages/workers/workers",
+    "pages/mypool/mypool",
+    "pages/wallet/wallet",
+    "pages/transaction/transaction",
+    "pages/pool/pool",
+    "pages/help/help",
+    "pages/about/about"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "我的矿池",
+    "navigationBarTextStyle":"black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "selectedColor":"#73d0f4",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "iconPath": "assets/images/data.png",
+      "selectedIconPath": "assets/images/data.png",
+      "text": "数据"
+    },{
+      "pagePath": "pages/pool/pool",
+      "iconPath": "assets/images/pool/pool.png",
+      "selectedIconPath": "assets/images/pool/pool.png",
+      "text": "矿池"
+    },{
+      "pagePath": "pages/setting/setting",
+      "iconPath": "assets/images/setting.png",
+      "selectedIconPath": "assets/images/setting.png",
+      "text": "我的"
+    }]
+  }
+}

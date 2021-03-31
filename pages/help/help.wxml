@@ -1,0 +1,34 @@
+<!--pages/help/help.wxml-->
+
+<block>
+  <!-- 包裹图片+两行文字 id="{{index}}"是给按下了那个item记录-->
+  <view class="view_tupian_wenzi1" bindtap="bindViewTap">
+    <image class="image_1" src="../../assets/images/help/howto.png" />
+    <!-- 包裹两行文字 -->
+    <view class="view_wenzi2">
+      <text class="text_small">使用引导：</text>
+      <text class="text_small">1、目前小程序只能服务参与Nanopool矿池挖矿的CFX钱包账户。使用前需要提供一个CFX钱包地址，这里使用的是旧地址，新地址可以通过在https://confluxscan.io/address-converter转换得到。</text>
+      <text class="text_small">2、将满足上述条件的CFX钱包地址输入“数据”页面中的搜索框，然后回车搜索查询即可。</text>
+      <text class="text_small">3、点击每个页面会触发刷新，页面将重新更新数据。</text>
+      <text class="text_small">4、如果您想查询新的地址，只需再次把满足条件的地址输入查询即可。</text>
+    </view>
+  </view>
+</block>
+<block>
+  <!-- 包裹图片+两行文字 id="{{index}}"是给按下了那个item记录-->
+  <view class="view_tupian_wenzi2" bindtap="bindViewTap">
+    <image class="image_1" src="../../assets/images/help/problem.png" />
+    <!-- 包裹两行文字 -->
+    <view class="view_wenzi2">
+      <text class="text_small">常见问题：</text>
+      <text class="text_small">1、为什么我输入我的CFX地址显示账户不存在？</text>
+      <text class="text_small">因为本小程序目前只支持在Nanopool矿池挖CFX的用户监控矿机以及查看账户、矿池等相关信息。显示账户不存在，请确认您使用的是CFX旧地址，并且改地址是您在Nanopool矿池挖CFX的钱包地址。若满足条件依旧提示账户不存在，则可能是Nanopool API延迟，请稍等片刻后点击屏幕刷新即可。</text>
+      <text class="text_small">2、为什么我看不到我所有的矿池支付记录/我的交易记录？</text>
+      <text class="text_small">由于小程序资源有限，我们只展示您的最近100/10条矿池支付记录/个人交易记录，查看全部记录请到https://confluxscan.io/线上查询。</text>
+      <text class="text_small">3、为什么我看不到我的页面信息？为什么我点击页面没有任何反应？</text>
+      <text class="text_small">页面加载不出信息或者点击刷新没有反应，可能是您的移动设备网络不佳或者小程序使用的Nanopool和ConfluxScan的API连接不稳定所致。请您稍等片刻，等待网络情况变好时再使用。（感谢您能体谅我们，开发不易）</text>
+      <text class="text_small">4、还有其他疑问没有解决怎么办？</text>
+      <text class="text_small">不要犹豫，请点击“关于我们”，直接加我微信！</text>
+    </view>
+  </view>
+</block>
